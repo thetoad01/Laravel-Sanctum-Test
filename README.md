@@ -2,6 +2,34 @@
 
 [Official Docs](https://laravel.com/docs/master/sanctum).
 
+## Sanctum for token-based SPAs
+
+**Install**
+```
+composer require laravel/sanctum
+composer require laravel/ui
+php artisan ui vue --auth
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+
+**Put database settings in .env file**
+```
+php artisan migrate
+```
+
+**In app/Http/Kernel.php**
+```
+use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
+
+'api' => [
+    EnsureFrontendRequestsAreStateful::class,
+    'throttle:60,1',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+],
+```
+
+**Follow directions in "Configuring Your First-Party Domains" in [Official Docs](https://laravel.com/docs/master/sanctum#spa-configuration)**
+
 ## Laravel Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
