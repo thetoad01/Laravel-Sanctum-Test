@@ -31,10 +31,11 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 ```
 
 **In .env**
+```
 SESSION_DOMAIN=localhost
 # where your frontend lives
 SANCTUM_STATEFUL_DOMAINS=localhost,127.0.0.1
-
+```
 
 **Follow directions in "Configuring Your First-Party Domains" in [Official Docs](https://laravel.com/docs/master/sanctum#spa-configuration)**
 
