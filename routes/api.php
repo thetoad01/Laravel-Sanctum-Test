@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+// Token authentication routes
 Route::post('/login', 'ApiAuthenticationController@login');
 Route::post('/login/forgot', 'ApiAuthenticationController@forgot');
+Route::post('/login/delete', 'ApiAuthenticationController@destroy');
 
 // SPA Routes
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
