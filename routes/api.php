@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/login', 'ApiAuthenticationController@login');
+Route::post('/login/forgot', 'ApiAuthenticationController@forgot');
 
 // SPA Routes
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
